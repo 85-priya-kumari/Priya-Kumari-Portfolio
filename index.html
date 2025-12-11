@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="P LETTER.png">
+    <title>Priya Kumari | Frontend Developer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #6b8cbc;
+            --accent-color: #ff7e5f;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --light-text: #666;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f0f5ff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--dark-color);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background-color: var(--accent-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-accent {
+            background-color: var(--accent-color);
+        }
+
+        .btn-accent:hover {
+            background-color: #ff6b4a;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 150px;
+            padding-bottom: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wave-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%234a6fa5" opacity="0.1"/></svg>');
+            background-size: 50% 100%;
+            animation: wave 20s linear infinite;
+        }
+
+        .wave:nth-child(2) {
+            opacity: 0.5;
+            animation: wave-reverse 15s linear infinite;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%234a6fa5" opacity="0.2"/></svg>');
+            background-size: 50% 100%;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(0) translateZ(0) scaleY(1); }
+            50% { transform: translateX(-25%) translateZ(0) scaleY(1); }
+            100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
+        }
+
+        @keyframes wave-reverse {
+            0% { transform: translateX(-50%) translateZ(0) scaleY(1); }
+            50% { transform: translateX(-25%) translateZ(0) scaleY(1); }
+            100% { transform: translateX(0) translateZ(0) scaleY(1); }
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .hero-text h2 {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--light-text);
+            max-width: 600px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .image-placeholder {
+            flex: 0 0 350px;
+            height: 350px;
+            border-radius: 50%;
+            background-color: #e6ecff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 8px solid white;
+            box-shadow: var(--shadow);
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        /* Education Section */
+        .education-item {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .education-degree {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+        }
+
+        .education-date {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .education-details h3 {
+            color: var(--dark-color);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .education-details p {
+            color: var(--light-text);
+            margin-bottom: 10px;
+        }
+
+        .education-gpa {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Experience Section */
+        .experience-item {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .exp-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+        }
+
+        .exp-company {
+            color: var(--dark-color);
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .exp-date {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .exp-location {
+            color: var(--light-text);
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .exp-details li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .exp-details li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-item {
+            background-color: #eef2ff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--dark-color);
+            transition: var(--transition);
+        }
+
+        .skill-item:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Projects Section */
+        .project-highlight {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .project-highlight:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-image {
+            height: 250px;
+            background-color: #e6ecff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-image i {
+            font-size: 5rem;
+            color: var(--secondary-color);
+        }
+
+        .project-content {
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-content h3 {
+            font-size: 1.6rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+
+        .project-tagline {
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: auto;
+            padding-top: 20px;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .contact-details li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-details i {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.1);
+        }
+
+        /* Form Success Message */
+        .form-success {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        .form-success.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .image-placeholder {
+                flex: 0 0 300px;
+                height: 300px;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow);
+                z-index: 1000;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-text h2 {
+                font-size: 1.5rem;
+            }
+            
+            .education-header, .exp-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .education-date, .exp-date {
+                margin-top: 10px;
+            }
+            
+            .project-links {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding-top: 130px;
+            }
+            
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .image-placeholder {
+                flex: 0 0 250px;
+                height: 250px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#home" class="logo">Priya<span>Kumari</span></a>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero section">
+        <div class="wave-background">
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Priya Kumari</h1>
+                    <h2>Computer Science Engineering Student | Frontend Developer | UI/UX Enthusiast</h2>
+                    <p>I'm a passionate Computer Science student at Birla Institute of Technology, Mesra, with a strong foundation in frontend development and UI/UX design. I specialize in creating responsive, user-friendly web interfaces using modern technologies.</p>
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn">Get in Touch</a>
+                        <a href="#projects" class="btn btn-accent">View Portfolio</a>
+                    </div>
+                </div>
+                <div class="image-placeholder">
+                    <img src="profile.jpg" alt="Priya Kumari">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <div class="education-header">
+                    <h2 class="education-degree">Bachelor of Technology</h2>
+                    <span class="education-date">Nov 2022 – July 2026</span>
+                </div>
+                <div class="education-details">
+                    <h3>Computer Science and Engineering</h3>
+                    <p>Birla Institute of Technology, Mesra | Ranchi, Jharkhand</p>
+                    <p class="education-gpa">CGPA: 8.01/10.0</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section" style="background-color: #f8faff;">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <h2 class="exp-title">Frontend Intern</h2>
+                        <h3 class="exp-company">ZATO | Hyderabad, India</h3>
+                    </div>
+                    <span class="exp-date">May 2025 - July 2025</span>
+                </div>
+                <ul class="exp-details">
+                    <li>Developed UI screens for the <strong>Client Portal</strong> using HTML, CSS, JavaScript, TypeScript, React.js, and Ant Design</li>
+                    <li>Contributed to automating <strong>General Ledger</strong> validation by integrating Python backend with frontend interface</li>
+                    <li>Displayed error summaries for financial data comparison</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <h2 class="exp-title">Web Designer</h2>
+                        <h3 class="exp-company">Info Era Software Services | Remote</h3>
+                    </div>
+                    <span class="exp-date">Dec 2024</span>
+                </div>
+                <ul class="exp-details">
+                    <li>Completed comprehensive course on <strong>HTML5, CSS, JavaScript, Bootstrap, Photoshop</strong></li>
+                    <li>Gained hands-on experience through assignments and real-world projects</li>
+                    <li>Developed web interface and UI/UX design skills</li>
+                    <li>Focused on responsive design and interactive web elements</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">TypeScript</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Frontend Technologies</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">HTML5 & CSS</span>
+                        <span class="skill-item">React.js</span>
+                        <span class="skill-item">Bootstrap</span>
+                        <span class="skill-item">Ant Design</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Backend & Database</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Node.js</span>
+                        <span class="skill-item">Express.js</span>
+                        <span class="skill-item">Flask</span>
+                        <span class="skill-item">MySQL</span>
+                        <span class="skill-item">MongoDB</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Development Tools</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Git & GitHub</span>
+                        <span class="skill-item">VS Code</span>
+                        <span class="skill-item">Postman</span>
+                        <span class="skill-item">Canva</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 50px;">
+                <h3 style="text-align: center; color: var(--primary-color); margin-bottom: 30px;">Academic Foundation</h3>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h4>Data Structures & Algorithms</h4>
+                        <p>Strong foundation in efficient problem-solving and algorithm design.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Database Management</h4>
+                        <p>Expertise in designing and managing relational databases.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Object Oriented Programming</h4>
+                        <p>Proficiency in OOP concepts and design principles.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Computer Networks</h4>
+                        <p>Understanding of network protocols and distributed systems.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Software Engineering</h4>
+                        <p>Knowledge of SDLC, design patterns, and best practices.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Operating Systems</h4>
+                        <p>Understanding of process management and system architecture.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section" style="background-color: #f8faff;">
+        <div class="container">
+            <h2 class="section-title">Featured Project</h2>
+            <div class="project-highlight">
+                <div class="project-content">
+                    <h3>CultivateCulture</h3>
+                    <div class="project-tagline">Connecting Cultures Through Technology</div>
+                    <p>Led the front-end development for CultivateCulture, an innovative platform connecting foreigners and farming enthusiasts with rural Indian landowners. The platform showcases available lands and cultural immersion experiences.</p>
+                    <p>Integrated technical expertise and innovative design to optimize performance, responsiveness, and accessibility for a diverse user base. Designed seamless website interface ensuring smooth navigation, secure transactions, and engaging user experience.</p>
+                    <div class="project-links">
+                        <a href="https://85-priya-kumari.github.io/gdsc1/" class="btn">View Live Site</a>
+                        <a href="https://github.com/85-priya-kumari/gdsc1.git" class="btn btn-accent">GitHub Repository</a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="project-highlight">
+                <div class="project-content">
+                    <h3>AI-Based Inventory Management System</h3>
+                    <div class="project-tagline">Management System Through Technology</div>
+                    <p>Spearheaded the creation of an end-to-end AI-powered inventory system using React.js for the frontend and Node.js/Flask for the backend.</p>
+                    <p>Forged a RESTful API with Flask to deliver real-time image classification from the ML model, optimizing stock levels.</p>
+                    <p>Produced a responsive and dynamic UI using React.js, enhancing the user experience for inventory tracking.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/85-priya-kumari/AI-Based-Inventory-Management-System-for-Perishable-Goods.git" class="btn btn-accent">GitHub Repository</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Details</h3>
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Banka, Bihar - 813102</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 9142330289</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>priyadeveloper35@gmail.com</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 30px;">Connect With Me</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/85-priya-kumari" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/85-priya-kumari" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://x.com/hello_priya_" class="social-link" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/_09_priya_kumari" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- FORMSPREE FORM STARTS HERE -->
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <!-- Your Formspree URL added here -->
+                    <form action="https://formspree.io/f/mblnpdrk" method="POST" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        
+                        <!-- Hidden fields for better email formatting -->
+                        <input type="hidden" name="_subject" value="New Message from Portfolio Website">
+                        <input type="hidden" name="_replyto" value="priyadeveloper35@gmail.com">
+                        
+                        <button type="submit" class="btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        
+                        <!-- Success message -->
+                        <div class="form-success" id="successMessage">
+                            <i class="fas fa-check-circle"></i> Message sent successfully! I'll get back to you soon.
+                        </div>
+                    </form>
+                    
+                    <p style="margin-top: 15px; font-size: 0.9rem; color: var(--light-text); text-align: center;">
+                        <i class="fas fa-envelope"></i> Messages go directly to my inbox
+                    </p>
+                </div>
+                <!-- FORMSPREE FORM ENDS HERE -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#home" class="logo" style="color: white;">Priya<span style="color: var(--accent-color);">Kumari</span></a>
+                <p style="margin-top: 20px; max-width: 600px;">Computer Science Engineering Student | Frontend Developer | UI/UX Enthusiast</p>
+                <div class="copyright">
+                    <p>&copy; 2025 Priya Kumari. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            const icon = this.querySelector('i');
+            
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+                icon.className = 'fas fa-bars';
+            } else {
+                navLinks.style.display = 'flex';
+                icon.className = 'fas fa-times';
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    document.querySelector('.nav-links').style.display = 'none';
+                    document.querySelector('.mobile-menu-btn i').className = 'fas fa-bars';
+                }
+            });
+        });
+
+        // Formspree Form Submission Handler
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            const successMessage = document.getElementById('successMessage');
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            try {
+                // Submit to Formspree
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Show success message
+                    successMessage.classList.add('show');
+                    form.reset();
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.classList.remove('show');
+                    }, 5000);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                // Show error message
+                alert('Sorry, there was an error sending your message. Please email me directly at priyadeveloper35@gmail.com');
+            } finally {
+                // Reset button state
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Update active nav link on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Add active class styling
+        const style = document.createElement('style');
+        style.textContent = '.nav-links a.active { color: var(--accent-color); } .nav-links a.active::after { width: 100%; }';
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
